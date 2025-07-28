@@ -28,6 +28,7 @@
   -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
       rel="stylesheet"
@@ -1090,6 +1091,8 @@
    * REUSED STYLE
    */
 
+   
+
         .container {
           max-width: 550px;
           margin-inline: auto;
@@ -1747,7 +1750,7 @@
         font-size: 1rem;
         color: #555;
         text-decoration: none;
-        transition: color 3s ease;
+        transition: color 0.3s ease;
       }
 
       .contact-info:hover {
@@ -1776,7 +1779,7 @@
         position: relative;
         opacity: 0;
         transform: translateY(30px);
-        transition: all 4s ease;
+        transition: all 3s ease;
       }
 
       .skill-card.show {
@@ -1807,53 +1810,6 @@
       .skill-card:hover .tooltip {
         opacity: 1;
         transform: translateY(0);
-      }
-
-      .project-card {
-        display: block;
-        background: #1f1f2e;
-        border-radius: 12px;
-        overflow: hidden;
-        text-decoration: none;
-        color: white;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        transform: translateY(40px);
-        opacity: 0;
-        transition: all 6s ease;
-      }
-
-      .project-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-      }
-
-      .project-card.show {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      .card-banner img {
-        width: 100%;
-        display: block;
-        transition: transform 5s ease;
-      }
-
-      .project-card:hover .card-banner img {
-        transform: scale(1.05);
-      }
-
-      .card-content {
-        padding: 15px;
-      }
-
-      .card-title {
-        font-size: 1.1rem;
-        margin-bottom: 5px;
-      }
-
-      .publish-date {
-        font-size: 0.9rem;
-        color: #ccc;
       }
     </style>
   </head>
@@ -2755,6 +2711,8 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/loaders/STLLoader.js"></script>
     <script src="main.js"></script>
     <!-- 
+
+
         - #FOOTER
         -->
 
@@ -2785,7 +2743,7 @@
     <!-- 
     - custom js link
   -->
-    <script src="./assets/js/script.js"></script>
+   
 
     <!-- 
     - ionicon link
@@ -2822,6 +2780,7 @@
 
       document.addEventListener("click", startMusic);
     </script>
+    
   </body>
 </html>
 
@@ -2991,24 +2950,5 @@
 
   cards.forEach((card) => {
     observer3.observe(card);
-  });
-
-  const projectCards = document.querySelectorAll(".project-card");
-
-  const observer4 = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  projectCards.forEach((card) => {
-    observer4.observe(card);
   });
 </script>
